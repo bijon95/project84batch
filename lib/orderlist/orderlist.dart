@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
-
 class OrderList extends StatefulWidget {
   const OrderList({Key? key}) : super(key: key);
 
