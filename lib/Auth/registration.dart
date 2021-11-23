@@ -13,7 +13,7 @@ class _RegistrationState extends State<Registration> {
       body: Container(
 
         child: Column(
-
+          children: [],
         ),
       ),
     );
