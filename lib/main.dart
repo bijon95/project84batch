@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project84batch/orderlist/orderlist.dart';
 
 import 'Auth/login.dart';
 import 'Auth/splash.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:Splash() ,
+      home: OrderList(),
     );
   }
 }
