@@ -18,49 +18,53 @@ class _SplashState extends State<Splash> {
     // TODO: implement initState
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 20),
             ()=> Navigator.of(context).pushReplacement(MaterialPageRoute(builder:
             (BuildContext context)=>Login_page()))
     );
   }
+
   @override
   Widget build(BuildContext context) {
+    var fullwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xff5956E9),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
+              alignment: Alignment.center,
               height: 138,
-              width: 292,
+              width: fullwidth,
               padding: EdgeInsets.only(left: 51, top: 40),
-              child: Image.asset("image/splashtxt.png"),
+              child: Text("Find your Gadget",style: TextStyle(fontSize: 65,color: Colors.white,fontWeight: FontWeight.w600),),
             ),
             Container(
               height: 486,
-              width: 486,
+              width: fullwidth,
               padding: EdgeInsets.only(left: 43),
               child: Image.asset("image/splashbg.png"),
             ),
             SizedBox(
               height: 64,
-              width: 454,
+              width: fullwidth,
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Container(
-                //padding: EdgeInsets.only(left: 50),
-                height: 70,
-                width: 314,
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
                 color: Color(0xffFFFFFF),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Text("Get started",style: TextStyle(
-                    fontSize: 20,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w700,
-                  ),),
-                ),
+              ),
+              margin: EdgeInsets.only(left: 48,right: 48),
+              height: 70,
+              width: fullwidth,
+
+              child: Align(
+                alignment: Alignment.center,
+                child: Text("Get started",style: TextStyle(
+                  fontSize: 20,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w700,
+                ),),
               ),
             ),
             SizedBox(
