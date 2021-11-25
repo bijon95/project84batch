@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project84batch/orderlist/orderlist.dart';
 
 import 'Auth/login.dart';
+import 'Auth/manu_drawer.dart';
 import 'Auth/splash.dart';
 
 void main() {
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: OrderList(),
+      home:Login_page (),
     );
   }
 }
