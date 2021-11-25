@@ -33,7 +33,7 @@ class ProductModel {
     required this.vendor,
     required this.imagelink,
     required this.galleryImages,
-    required this.attachment,
+
   });
 
   int id;
@@ -58,7 +58,7 @@ class ProductModel {
   String vendor;
   String imagelink;
   List<String> galleryImages;
-  Attachment attachment;
+
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
     id: json["id"],
@@ -82,8 +82,8 @@ class ProductModel {
     gallery: json["gallery"],
     vendor: json["vendor"] == null ? null : json["vendor"],
     imagelink: json["imagelink"] == null ? null : json["imagelink"],
-    galleryImages: json["galleryImages"] == null ? null : List<String>.from(json["galleryImages"].map((x) => x)),
-    attachment: json["attachment"] == null ? null : Attachment.fromJson(json["attachment"]),
+    galleryImages: json["galleryImages"] == null ? [] : List<String>.from(json["galleryImages"].map((x) => x)),
+
   );
 
   Map<String, dynamic> toJson() => {
@@ -109,7 +109,7 @@ class ProductModel {
     "vendor": vendor == null ? null : vendor,
     "imagelink": imagelink == null ? null : imagelink,
     "galleryImages": galleryImages == null ? null : List<dynamic>.from(galleryImages.map((x) => x)),
-    "attachment": attachment == null ? null : attachment.toJson(),
+
   };
 }
 
@@ -153,5 +153,4 @@ class Attachment {
   };
 }
 
-
-
+enum Gallery { THE_1401139113941396, EMPTY, THE_696, THE_250, THE_50, THE_16172628 }
