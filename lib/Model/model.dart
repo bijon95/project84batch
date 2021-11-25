@@ -29,7 +29,7 @@ class ProductModel {
     required this.description,
     required this.bigDescription,
     required this.image,
-    required this.gallery,
+
     required this.vendor,
     required this.imagelink,
     required this.galleryImages,
@@ -54,7 +54,7 @@ class ProductModel {
   String description;
   String bigDescription;
   String image;
-  Gallery gallery;
+
   String vendor;
   String imagelink;
   List<String> galleryImages;
@@ -64,11 +64,11 @@ class ProductModel {
     id: json["id"],
     altId: json["alt_id"],
     name: json["name"],
-    nameBn: json["name_bn"] == null ? null : json["name_bn"],
+    nameBn: json["name_bn"] == null ? "" : json["name_bn"],
     size: json["size"],
     catId: json["cat_id"],
     subCatId: json["sub_cat_id"],
-    thirdCatId: json["third_cat_id"] == null ? null : json["third_cat_id"],
+    thirdCatId: json["third_cat_id"] == null ? "" : json["third_cat_id"],
     brand: json["brand"],
     buyRate: json["buy_rate"],
     regularRate: json["regular_rate"],
@@ -79,9 +79,9 @@ class ProductModel {
     description: json["description"],
     bigDescription: json["big_description"],
     image: json["image"],
-    gallery: json["gallery"],
-    vendor: json["vendor"] == null ? null : json["vendor"],
-    imagelink: json["imagelink"] == null ? null : json["imagelink"],
+
+    vendor: json["vendor"] == null ? "" : json["vendor"],
+    imagelink: json["imagelink"] == null ? "" : json["imagelink"],
     galleryImages: json["galleryImages"] == null ? [] : List<String>.from(json["galleryImages"].map((x) => x)),
 
   );
@@ -105,7 +105,7 @@ class ProductModel {
     "description": description,
     "big_description": bigDescription,
     "image": image,
-    "gallery": gallery,
+
     "vendor": vendor == null ? null : vendor,
     "imagelink": imagelink == null ? null : imagelink,
     "galleryImages": galleryImages == null ? null : List<dynamic>.from(galleryImages.map((x) => x)),
@@ -153,4 +153,3 @@ class Attachment {
   };
 }
 
-enum Gallery { THE_1401139113941396, EMPTY, THE_696, THE_250, THE_50, THE_16172628 }

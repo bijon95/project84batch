@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project84batch/view/product_list.dart';
 
 import 'Auth/login.dart';
 import 'Auth/manu_drawer.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         canvasColor: Colors.amberAccent,
       ),
-      home:DRAWER() ,
+      home:ProductList() ,
     );
   }
 }
