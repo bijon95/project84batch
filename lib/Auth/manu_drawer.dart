@@ -22,27 +22,46 @@ class _DRAWERState extends State<DRAWER> {
           child: ListView(
             children: [
               ListTile(
+                onTap: (){
+
+                },
                 leading: Icon(Icons.person_outline),
                 title: Text('Profile'),
 
               ),
               ListTile(
+                  onTap: (){
+
+                  },
                 leading: Icon(Icons.add_shopping_cart),
                 title: Text('My Orders'),
               ),
               ListTile(
+                onTap: (){
+
+                },
                 leading: Icon(Icons.favorite_border),
                 title: Text('Favorites'),
               ),
               ListTile(
+                onTap: (){
+
+                },
                 leading: Icon(Icons.local_shipping),
                 title: Text('Delivery'),
               ),
               ListTile(
+                onTap: (){
+
+                },
                 leading: Icon(Icons.settings),
                 title: Text('Settings'),
               ),
               ListTile(
+
+                onTap: (){
+
+                },
                 leading: Icon(Icons.logout),
                 title: Text('Sign out'),
               ),

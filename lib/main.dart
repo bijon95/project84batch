@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project84batch/orderlist/orderlist.dart';
+import 'package:project84batch/view/product_list.dart';
 
 import 'Auth/login.dart';
+import 'Auth/manu_drawer.dart';
 import 'Auth/splash.dart';
 
 void main() {
@@ -27,8 +28,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        canvasColor: Colors.amberAccent,
       ),
-      home: OrderList(),
+      home:ProductList() ,
     );
   }
 }
