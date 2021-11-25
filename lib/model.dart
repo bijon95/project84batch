@@ -106,9 +106,9 @@ class Welcome {
     "big_description": bigDescription,
     "image": image,
     "gallery": gallery,
-    "vendor": vendor == null ? null : vendor,
-    "imagelink": imagelink == null ? null : imagelink,
-    "galleryImages": galleryImages == null ? null : List<dynamic>.from(galleryImages.map((x) => x)),
+    "vendor": vendor == null ? "" : vendor,
+    "imagelink": imagelink == null ? "" : imagelink,
+    "galleryImages": galleryImages == null ? [] : List<dynamic>.from(galleryImages.map((x) => x)),
     "attachment": attachment == null ? null : attachment.toJson(),
   };
 }
