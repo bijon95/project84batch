@@ -8,14 +8,82 @@ class OrderList extends StatefulWidget {
 }
 
 class _OrderListState extends State<OrderList> {
+  Widget product(double screenWidth, var prodimg, var price, var name) {
+    return Center(
+        child: Column(
+      children: [
+        SizedBox(
+          height: screenWidth * 0.025,
+        ),
+        Center(
+          child: Container(
+            width: screenWidth * 0.7,
+            height: screenWidth * 0.3,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("asset/orderlist/$prodimg"),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        name,
+                        maxLines: 3,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(
+                          fontFamily: 'RaleWay',
+                          fontWeight: FontWeight.w600,
+                          fontSize: screenWidth * 0.04,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      "\$ $price",
+                      style: TextStyle(
+                        fontFamily: 'RaleWay',
+                        fontWeight: FontWeight.w600,
+                        fontSize: screenWidth * 0.04,
+                        color: Color.fromRGBO(89, 86, 233, 1),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text("Quantity"),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            setState(() {});
+                          },
+                          child: Container(),
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
+        )
+      ],
+    ));
+  }
+
   var totalPrice = 954;
   get strTotalPrice => totalPrice.toString();
   @override
-  
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
     var hei = screenWidth * 0.035;
+    var screenWidth2 = screenWidth;
     return Scaffold(
       backgroundColor: Color.fromRGBO(229, 229, 229, 1),
       appBar: AppBar(
@@ -59,10 +127,52 @@ class _OrderListState extends State<OrderList> {
           )
         ],
       ),
-      body: Container(
-        width: double.infinity,
-        height: screenWidth * 0.7,
-        color: Colors.red,
+      body: Column(
+        children: [
+          SizedBox(
+            height: screenWidth * 0.025,
+          ),
+          Center(
+            child: Container(
+              padding: EdgeInsets.only(
+                left: 10,
+                right: 10,
+              ),
+              width: screenWidth * 0.6,
+              height: screenHeight * 0.055,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(211, 242, 255, 1),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'asset/orderlist/notification_orderlist.png',
+                    fit: BoxFit.fill,
+                  ),
+                  Text(
+                    " Delivery for FREE until the end of the month",
+                    style: TextStyle(
+                      fontFamily: 'RaleWay',
+                      fontWeight: FontWeight.w600,
+                      fontSize: screenWidth * 0.025,
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+                child: Column(children: [
+              product(screenWidth, "2020-Apple-Air-iPad .png", "579",
+                  '2020 Apple iPad Air 10.9\"'),
+              product(screenWidth, "Apple-Airpods-Pro-White.png", "375",
+                  "APPLE AirPods Pro - White"),
+            ])),
+          )
+        ],
       ),
       bottomNavigationBar: Column(
         mainAxisSize: MainAxisSize.min,
@@ -78,33 +188,36 @@ class _OrderListState extends State<OrderList> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Total",style: TextStyle(
-                  fontFamily: 'RaleWay',
-                  fontWeight: FontWeight.w400,
-                  fontSize: screenWidth * 0.042,
-                ),),
-                
-                Text("\$ $strTotalPrice",style: TextStyle(
-                  fontFamily: "RaleWay",
-                  fontWeight: FontWeight.w700,
-                  fontSize: screenWidth * 0.052,
-                  color: Color.fromRGBO(89, 86, 233, 1),
-                ),),
+                Text(
+                  "Total",
+                  style: TextStyle(
+                    fontFamily: 'RaleWay',
+                    fontWeight: FontWeight.w400,
+                    fontSize: screenWidth * 0.042,
+                  ),
+                ),
+                Text(
+                  "\$ $strTotalPrice",
+                  style: TextStyle(
+                    fontFamily: "RaleWay",
+                    fontWeight: FontWeight.w700,
+                    fontSize: screenWidth * 0.052,
+                    color: Color.fromRGBO(89, 86, 233, 1),
+                  ),
+                ),
               ],
             ),
           ),
           Container(
             margin: EdgeInsets.only(
-                  left: screenWidth * 0.15,
-                  right: screenWidth * 0.15,
-                  bottom: screenWidth * 0.07),
+                left: screenWidth * 0.15,
+                right: screenWidth * 0.15,
+                bottom: screenWidth * 0.07),
             child: InkWell(
               onTap: () {
                 setState(() {});
               },
-              child: 
-              Container(
-                
+              child: Container(
                 width: screenWidth * 0.7,
                 height: screenHeight * 0.11,
                 decoration: BoxDecoration(
