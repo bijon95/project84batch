@@ -8,7 +8,9 @@ class OrderList extends StatefulWidget {
 }
 
 class _OrderListState extends State<OrderList> {
-  Widget product(double screenWidth, var prodimg, var price, var name) {
+  List<dynamic> lst = [];
+  Widget product(double screenWidth, var prodimg, var price, var name, var id) {
+    lst.add(1);
     return Center(
         child: Column(
       children: [
@@ -24,17 +26,24 @@ class _OrderListState extends State<OrderList> {
               color: Colors.white,
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset("asset/orderlist/$prodimg"),
+                Container(
+                    //width: 0.0,
+                    child: Image.asset("asset/orderlist/$prodimg", scale: 1.2)),
+                // SizedBox(
+                //   width: screenWidth * 0.015,
+                // ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Flexible(
+                    Container(
+                      height: screenWidth * 0.09,
+                      width: screenWidth * 0.4,
                       child: Text(
                         name,
-                        maxLines: 3,
+                        maxLines: 2,
                         overflow: TextOverflow.clip,
                         style: TextStyle(
                           fontFamily: 'RaleWay',
@@ -54,16 +63,76 @@ class _OrderListState extends State<OrderList> {
                     ),
                     Row(
                       children: [
-                        Text("Quantity"),
+                        Text(
+                          "Quantity",
+                          style: TextStyle(
+                            fontFamily: 'RaleWay',
+                            fontWeight: FontWeight.w400,
+                            fontSize: screenWidth * 0.037,
+                          ),
+                        ),
                         SizedBox(
                           width: 10,
                         ),
                         InkWell(
                           onTap: () {
+                            if (lst[id] != 1) {
+                              lst[id]--;
+                            }
                             setState(() {});
                           },
-                          child: Container(),
-                        )
+                          child: Container(
+                              width: screenWidth * 0.037,
+                              height: screenWidth * 0.037,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Color.fromRGBO(125, 204, 236, 1),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "-",
+                                  style: TextStyle(
+                                    fontSize: screenWidth * 0.03,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 8, right: 8),
+                          child: Text(
+                            lst[id].toString(),
+                            style: TextStyle(
+                              fontFamily: 'RaleWay',
+                              fontWeight: FontWeight.w600,
+                              fontSize: screenWidth * 0.037,
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
+                            lst[id]++;
+                            setState(() {});
+                          },
+                          child: Container(
+                              width: screenWidth * 0.037,
+                              height: screenWidth * 0.037,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(4),
+                                color: Color.fromRGBO(125, 204, 236, 1),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "+",
+                                  style: TextStyle(
+                                    fontSize: screenWidth * 0.03,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              )),
+                        ),
                       ],
                     )
                   ],
@@ -107,7 +176,7 @@ class _OrderListState extends State<OrderList> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontFamily: "Raleway",
-                fontSize: screenWidth * 0.045,
+                fontSize: screenWidth * 0.05,
                 color: Colors.black,
               ),
             ),
@@ -121,7 +190,7 @@ class _OrderListState extends State<OrderList> {
             child: Padding(
               padding: EdgeInsets.only(right: hei),
               child: Icon(Icons.delete_outline,
-                  size: screenWidth * 0.035,
+                  size: screenWidth * 0.04,
                   color: Color.fromRGBO(250, 74, 12, 1)),
             ),
           )
@@ -167,9 +236,9 @@ class _OrderListState extends State<OrderList> {
             child: SingleChildScrollView(
                 child: Column(children: [
               product(screenWidth, "2020-Apple-Air-iPad .png", "579",
-                  '2020 Apple iPad Air 10.9\"'),
+                  '2020 Apple iPad Air 10.9\"', 0),
               product(screenWidth, "Apple-Airpods-Pro-White.png", "375",
-                  "APPLE AirPods Pro - White"),
+                  "APPLE AirPods Pro - White", 1),
             ])),
           )
         ],
