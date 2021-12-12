@@ -4,6 +4,7 @@ import 'package:project84batch/view/product_list.dart';
 import 'Auth/login.dart';
 import 'Auth/manu_drawer.dart';
 import 'Auth/splash.dart';
+import 'orderlist/orderlist.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         canvasColor: Colors.amberAccent,
       ),
-      home:ProductList() ,
+      home:OrderList() ,
     );
   }
 }

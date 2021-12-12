@@ -77,8 +77,8 @@ class _OrderListState extends State<OrderList> {
                             setState(() {});
                           },
                           child: Container(
-                              width: screenWidth * 0.037,
-                              height: screenWidth * 0.037,
+                              width: screenWidth * 0.05,
+                              height: screenWidth * 0.05,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
                                 color: const Color.fromRGBO(125, 204, 236, 1),
@@ -111,8 +111,8 @@ class _OrderListState extends State<OrderList> {
                             setState(() {});
                           },
                           child: Container(
-                              width: screenWidth * 0.037,
-                              height: screenWidth * 0.037,
+                              width: screenWidth * 0.05,
+                              height: screenWidth * 0.05,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
                                 color: const Color.fromRGBO(125, 204, 236, 1),
@@ -159,7 +159,7 @@ class _OrderListState extends State<OrderList> {
             },
             child: Icon(
               Icons.arrow_back_sharp,
-              size: screenWidth * 0.04,
+              size: screenWidth * 0.06,
               color: Colors.black,
             )),
         title: Center(
@@ -170,7 +170,7 @@ class _OrderListState extends State<OrderList> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontFamily: "Raleway",
-                fontSize: screenWidth * 0.05,
+                fontSize: screenWidth * 0.06,
                 color: Colors.black,
               ),
             ),
@@ -184,7 +184,7 @@ class _OrderListState extends State<OrderList> {
             child: Padding(
               padding: EdgeInsets.only(right: hei),
               child: Icon(Icons.delete_outline,
-                  size: screenWidth * 0.04,
+                  size: screenWidth * 0.06,
                   color: const Color.fromRGBO(250, 74, 12, 1)),
             ),
           )
@@ -201,7 +201,7 @@ class _OrderListState extends State<OrderList> {
                 left: 10,
                 right: 10,
               ),
-              width: screenWidth * 0.6,
+              width: screenWidth * 0.7,
               height: screenHeight * 0.055,
               decoration: BoxDecoration(
                 color: const Color.fromRGBO(211, 242, 255, 1),
@@ -256,7 +256,7 @@ class _OrderListState extends State<OrderList> {
                   style: TextStyle(
                     fontFamily: 'RaleWay',
                     fontWeight: FontWeight.w400,
-                    fontSize: screenWidth * 0.042,
+                    fontSize: screenWidth * 0.05,
                   ),
                 ),
                 Text(
